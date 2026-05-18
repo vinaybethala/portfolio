@@ -1,26 +1,41 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-brand-navy: #0A2342;
+  --color-brand-blue: #00BFFF;
+  --color-brand-black: #1A1A2E;
+  --color-brand-gray: #5A6478;
+  --color-brand-light-gray: #F8F9FA;
+  --color-brand-border: #E8ECF0;
+  --color-brand-success: #16A34A;
+  --color-brand-success-bg: #F0FFF4;
+  --color-brand-success-border: #BBF7D0;
+  
+  --font-inter: var(--font-inter);
+  --font-syne: var(--font-playfair);
+  
+  --radius-card: 16px;
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.08);
+  --shadow-card-hover: 0 4px 24px rgba(0,191,255,0.15);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
 }
 
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FFFFFF;
+  color: var(--color-brand-black);
+  font-family: var(--font-inter), sans-serif;
 }
